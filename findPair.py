@@ -14,14 +14,17 @@ class PairFinder:
                 diff = x - y
                 if diff == target:
                     self.resultList.append([x, y])
+        if len(self.resultList) != 0:
+            self.resultString = '{0} -> '.format(len(self.resultList))
+            for it, pair in enumerate(self.resultList):
+                if it == len(self.resultList) - 1:
+                    self.resultString += '{}'.format(pair)
+                else:
+                    self.resultString += '{}, '.format(pair)
+            print(self.resultString)
 
-        self.resultString = '{0} -> '.format(len(self.resultList))
-        for it, pair in enumerate(self.resultList):
-            if it == len(self.resultList) - 1:
-                self.resultString += '{}'.format(pair)
-            else:
-                self.resultString += '{}, '.format(pair)
-        print(self.resultString)
+        else:
+            print('0')
         
 
 
